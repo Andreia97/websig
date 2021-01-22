@@ -153,10 +153,7 @@
 
         var baseEsriStreets=L.esri.basemapLayer('Streets'); 
 
-        /* add scalebar */
-
-        var scale = L.control.scale();
-        scale.addTo(map);
+       
 
         //* adicionar estilo ao geojason
         var thetrail=L.geoJSON(trail, {
@@ -862,7 +859,11 @@
         L.control.layers( '', overlays1).addTo(map);
         L.control.layers( '', overlays2).addTo(map);
 
+         /* add scalebar */
 
+        var scale = L.control.scale();
+        scale.addTo(map);
+                
     </script>
     
 </body>
