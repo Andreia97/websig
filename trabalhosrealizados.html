@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>Currículo Vitae </title>
+                <link rel="stylesheet" href="estilos_revisao.css">
+                
+        </head>
+        <body>
+            <nav class="menu">
+            <h2></h2>
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="sobremim.html">Sobre Mim</a></li>
+                    <li><a href="curriculo.html">Currículo Vitae</a></li>    
+                    <li><a href="trabalhosrealizados.html"> Trabalhos Realizados</a></li>
+                    <li> <a href="experiencia.html"> Projeto WebSIG </a></li>
+                </ul>
+    
+            </nav>
+
+            <h2 id="cartografia"> Alguma Cartografia Desenvolvida: </h2>
+
+            <img class="img_viseu" src="viseu.jpg">
+            <img class="img_declives" src="declives.jpg">
+            <img class="img_denspop" src="dens_pop.jpg">
+            <img class="img_hipsometria" src="hipsometria.jpg">
+            <img class="img_cinfaes" src="cinfaes.jpg">
+            <img class="img_declivescinf" src="declivescinf.jpg">
+            <img class="img_hipscinf" src="hipscinf.jpg">
+            <img class="img_cos" src="COS.jpg">
+            <img class="img_expcinf" src="expcinf.jpg">
+            <img class="img_probcinf" src="probcinf.jpg">
+            <img class="img_pergcinf" src="pergcinf.jpg">
+            <img class="img_suscetibilidade" src="suscetibilidade.jpg">
+            <img class="img_poster1" src="poster1.JPG">
+            <img class="img_poster2" src="poster2.JPG">
+            <img class="img_poster3" src="poster3.JPG">
+            <img class="img_poster4" src="poster4.JPG">
+            <img class="img_gondomar" src="gondomar.jpg">
+            <img class="img_centralidades" src="centralidades.JPG">
+            <img class="img_denspop1" src="denspop1.jpg">
+            <img class="img_denspop2" src="denspop2.jpg">
+
+        <iframe id="storymap1" src ="https://arcg.is/Kr1SO"> </iframe>
+
+        <div id='mapDIV'>i</div>
+        <script>
+            var map = L.map(document.getElementById('mapDIV'),{
+            center:[41.0719,-8.079306],
+            zoom:11
+            });
+    
+            //*tipo de mapa
+            var basemap=L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{    
+            });
+            basemap.addTo(map);
+    
+            var baseEsriImagery=L.esri.basemapLayer('Imagery');
+            baseEsriImagery.addTo(map);
+    
+            var baseEsriStreets=L.esri.basemapLayer('Streets'); 
+
+
+
+
+            

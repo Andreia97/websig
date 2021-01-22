@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Sobre mim </title>
+    <link rel="stylesheet" type="text/css" href="estilos_revisao.css">
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="sobremim.html">Sobre Mim</a></li>
+            <li><a href="curriculo.html">Currículo Vitae</a></li>  
+            <li><a href="trabalhosrealizados.html"> Trabalhos Realizados</a></li>
+            <li> <a href="experiencia.html"> Projeto WebSIG </a></li>
+        </ul>
+
+    </nav>
+
+
+    <p id="p">Chamo-me Andreia Viviana Silva Esteves, nasci no Porto no dia 11 de julho de 1997.<br> No ano de 2016 ingressei no ensino superior, na Faculdade de Letras da Universidade do Porto, para o curso de Geografia. <br> Em 2017 iniciei a minha carreira de Bombeira Voluntária, na Associação Humanitária dos Bombeiros Voluntários de Cinfães. <br> Terminei a licenciatura no ano de 2019. Neste momento, frequento o último ano de mestrado em Sistemas de Informação Geográfica e Ordenamento do Território na Universidade de Letras da Faculdade do Porto.<br> Realizei este semestre o meu primeiro estágio curricular no Instituto de Conservação da Natureza e das Florestas (ICNF). <br> Ao longo destes últimos anos fui adquirindo conhecimentos e experiências em Sistemas de Informação Geográfica,<br> deteção remota, análise espacial, programação em Python, HTML/CSS, JavaScript e como os aplicar no ordenamento do território.</p>
+        <img class="img_sobremim" src="sobremim.jpg">
+
+        <iframe id="storymap" src ="https://storymaps.arcgis.com/stories/623dab0cdaad4e2fba206ab127483391"> </iframe>
+
+        <div id='mapDIV'>i</div>
+        <script>
+            var map = L.map(document.getElementById('mapDIV'),{
+            center:[41.0719,-8.079306],
+            zoom:11
+            });
+    
+            //*tipo de mapa
+            var basemap=L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{    
+            });
+            basemap.addTo(map);
+    
+            var baseEsriImagery=L.esri.basemapLayer('Imagery');
+            baseEsriImagery.addTo(map);
+    
+            var baseEsriStreets=L.esri.basemapLayer('Streets'); 
