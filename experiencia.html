@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <title>Currículo</title>
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" crossorigin=""></script>
+        <script src="areas_ardidas.geojson"></script>
+        <script src="cinfaes.geojson"></script>
+        <script src="espadanedo.geojson"></script>
+        <script src="ferreiros_tendais.geojson"></script>
+        <script src="fornelos.geojson"></script>
+        <script src="moimenta.geojson"></script>
+        <script src="nespereira.geojson"></script>
+        <script src="oliveira_douro.geojson"></script>
+        <script src="piaes.geojson"></script>
+        <script src="sao_cristovao.geojson"></script>
+        <script src="souselo.geojson"></script>
+        <script src="tarouquela.geojson"></script>
+        <script src="tendais.geojson"></script>
+        <script src="travanca.geojson"></script>
+        <script src="uniao_freguesias.geojson"></script>
+        <script src="BAIXO.geojson"></script>
+        <script src="BAIXO_MODERADO.geojson"></script>
+        <script src="MODERADO.geojson"></script>
+        <script src="ELEVADO.geojson"></script>
+        <script src="MUITO_ELEVADO.geojson"></script>
+        <script src="1990.geojson"></script>
+        <script src="1991.geojson"></script>
+        <script src="1993.geojson"></script>
+        <script src="1994.geojson"></script>
+        <script src="1995.geojson"></script>
+        <script src="1996.geojson"></script>
+        <script src="1997.geojson"></script>
+        <script src="1998.geojson"></script>
+        <script src="1999.geojson"></script>
+        <script src="2000.geojson"></script>
+        <script src="2001.geojson"></script>
+        <script src="2002.geojson"></script>
+        <script src="2003.geojson"></script>
+        <script src="2004.geojson"></script>
+        <script src="2005.geojson"></script>
+        <script src="2006.geojson"></script>
+        <script src="2007.geojson"></script>
+        <script src="2008.geojson"></script>
+        <script src="2009.geojson"></script>
+        <script src="2010.geojson"></script>
+        <script src="2011.geojson"></script>
+        <script src="2012.geojson"></script>
+        <script src="2013.geojson"></script>
+        <script src="2014.geojson"></script>
+        <script src="2015.geojson"></script>
+        <script src="2016.geojson"></script>
+        <script src="2017.geojson"></script>
+        <script src="2018.geojson"></script>
+        <script src="dia1.geojson"></script>
+        <script src="dia2.geojson"></script>
+        <script src="dia3.geojson"></script>
+        <script src="dia4.geojson"></script>
+        <script src="dia5.geojson"></script>
+        <script src="dia6.geojson"></script>
+        <script src="dia7.geojson"></script>
+        <script src="dia8.geojson"></script>
+        <script src="dia9.geojson"></script>
+        <script src="dia10.geojson"></script>
+        <script src="dia11.geojson"></script>
+        <script src="dia12.geojson"></script>
+        <script src="dia13.geojson"></script>
+        <script src="dia14.geojson"></script>
+        <script src="dia15.geojson"></script>
+        <script src="dia16.geojson"></script>
+        <script src="dia17.geojson"></script>
+        <script src="dia18.geojson"></script>
+        <script src="dia19.geojson"></script>
+        <script src="dia20.geojson"></script>
+        <script src="dia21.geojson"></script>
+        <script src="dia22.geojson"></script>
+        <script src="dia23.geojson"></script>
+        <script src="dia24.geojson"></script>
+        <script src="dia25.geojson"></script>
+        <script src="dia26.geojson"></script>
+        <script src="dia27.geojson"></script>
+        <script src="dia28.geojson"></script>
+        <script src="dia29.geojson"></script>
+        <script src="dia30.geojson"></script>
+        <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+        <script src ="http://unpkg.com/esri-leaflet@2.1.1/dist/esri-leaflet.js"></script>
+
+
+
+        <style>
+
+            #mapDIV{
+                height: 600px;
+                width: 1200px;
+                border: solid 1px black;
+                position: absolute;
+                top:15%;
+                left:2%
+            }
+
+            .leaflet-control-layers-toggle:after{ 
+                content:"Camadas"; 
+                font-family: sans-serif;
+                color:white;
+                width: 200px;
+                
+            }
+            .leaflet-control-layers-toggle{ 
+                width: auto;
+                background-position:3px 50% ;
+                padding-left:36px;
+                text-decoration:none;
+                background-color:#4c4d4c;
+             
+            }
+
+</style>
+
+</head>
+<body>
+
+    <nav class="menu">
+        <h2></h2>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="sobremim.html">Sobre Mim</a></li>
+                <li><a href="curriculo.html">Currículo Vitae</a></li> 
+                <li><a href="trabalhosrealizados.html"> Trabalhos Realizados</a></li>
+                <li> <a href="experiencia.html"> Projeto WebSIG </a></li>
+               
+            </ul>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+        <div id='mapDIV'>i</div>
+        <script>
+
+        var map = L.map(document.getElementById('mapDIV'),{
+        center:[41.0719,-8.079306],
+        zoom:12
+        });
+
+        //*tipo de mapa
+        var basemap=L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{    
+        });
+        basemap.addTo(map);
+
+        var baseEsriImagery=L.esri.basemapLayer('Imagery');
+        baseEsriImagery.addTo(map);
+
+        var baseEsriStreets=L.esri.basemapLayer('Streets'); 
+
+        /* add scalebar */
+
+        var scale = L.control.scale();
+        scale.addTo(map);
+
+        //* adicionar estilo ao geojason
+        var thetrail=L.geoJSON(trail, {
+            color:'#800000',
+            weight: 2,
+        });
+
+        thetrail.bindTooltip('Áreas Ardidas de Cinfães');
+        
+
+        var baixo=L.geoJSON(trail3, {
+            color:'#238E23',
+            weight:1,
+        })
+
+        baixo.bindTooltip('Probabilidade Baixa');
+        
+
+        var baixomoderado=L.geoJSON(trail4,{
+            color:'#32CD32',
+            weight:1,
+        })
+
+        baixomoderado.bindTooltip('Probabilidade Baixa-Moderada');
+       
+
+        var moderado=L.geoJSON(trail5,{
+            color:'#FFFF00',
+            weight:1,
+        })
+
+        moderado.bindTooltip('Probabilidade Moderada');
+        
+
+        var elevado=L.geoJSON(trail6,{
+            color:'#FF7F00',
+            weight:1,
+        })
+
+        elevado.bindTooltip('Probabilidade Elevada');
+        
+
+        var muitoelevado=L.geoJSON(trail7,{
+            color:'#FF0000',
+            weight:1,
+        })
+
+        muitoelevado.bindTooltip('Probabilidade Muito Elevada');
+      
+
+        var ano1990=L.geoJSON(trail8, {
+            color:'#fb0102',
+            wight:1,
+        })
+
+        ano1990.bindTooltip('Ano 1990');
+       
+
+        var ano1991=L.geoJSON(trail9,{
+            color:"#ff2415",
+            weight:1,
+        })
+
+        ano1991.bindTooltip('Ano 1991');
+        
+
+        var ano1993=L.geoJSON(trail10, {
+            color:"#e83700",
+            weight:1,
+        })
+
+        ano1993.bindTooltip('Ano 1993');
+       
+
+        var ano1994=L.geoJSON(trail11, {
+            color:"#ff2a1b",
+            weight:1,
+        })
+
+        ano1994.bindTooltip('Ano 1994');
+       
+
+        var ano1995=L.geoJSON(trail12,{
+            color:"#e44823",
+            weight:1,
+        })
+
+        ano1995.bindTooltip('Ano 1995');
+       
+
+        var ano1996=L.geoJSON(trail13,{
+            color:"#f43101",
+            weight:1,
+        })
+
+        ano1996.bindTooltip('Ano 1996');
+        
+
+        var ano1997=L.geoJSON(trail14,{
+            color:"#e12c03",
+            weight:1,
+        })
+
+        ano1997.bindTooltip('Ano 1997');
+        
+
+        var ano1998=L.geoJSON(trail15,{
+            color:"#eb4734",
+            weight:1,
+        })
+
+        ano1998.bindTooltip('Ano 1998');
+      
+
+        var ano1999=L.geoJSON(trail16,{
+            color:"#e64e2b",
+            weight:1,
+        })
+
+        ano1999.bindTooltip('Ano 1999');
+        
+
+        var ano2000=L.geoJSON(trail17,{
+            color:"#99CC32",
+            weight:1,
+        })
+
+        ano2000.bindTooltip('Ano 2000');
+      
+
+        var ano2001=L.geoJSON(trail18,{
+            color:"#00FF00",
+            weight:1,
+        })
+
+        ano2001.bindTooltip('Ano 2001');
+        
+
+        var ano2002=L.geoJSON(trail19,{
+            color:"#93DB70",
+            weight:1,
+        })
+
+        ano2002.bindTooltip('Ano 2002');
+       
+
+        var ano2003=L.geoJSON(trail20,{
+            color:"#2F4F2F",
+            weight:1,
+        })
+
+        ano2003.bindTooltip('Ano 2003');
+        
+
+        var ano2004=L.geoJSON(trail21,{
+            color:"#238E23",
+            weight:1,
+        })
+
+        ano2004.bindTooltip('Ano 2004');
+       
+
+        var ano2005=L.geoJSON(trail22,{
+            color:"#6B8E23",
+            weight:1,
+        })
+        
+        ano2005.bindTooltip('Ano 2005');
+     
+
+        var ano2006=L.geoJSON(trail23,{
+            color:"#215E21",
+            weight:1,
+        })
+
+        ano2006.bindTooltip('Ano 2006');
+       
+
+        var ano2007=L.geoJSON(trail24,{
+            color:"#32CD32",
+            weight:1,
+        })
+
+        ano2007.bindTooltip('Ano 2007');
+       
+
+        var ano2008=L.geoJSON(trail25,{
+            color:"#426F42",
+            weight:1,
+        })
+
+        ano2008.bindTooltip('Ano 2008');
+        
+        
+        var ano2009=L.geoJSON(trail26,{
+            color:"#238E68",
+            weight:1,
+        })
+
+        ano2009.bindTooltip('Ano 2009');
+        
+
+        var ano2010=L.geoJSON(trail27,{
+            color:"#4F2F4F",
+            weight:1,
+        })
+
+        ano2010.bindTooltip('Ano 2010');
+      
+
+        var ano2011=L.geoJSON(trail28,{
+            color:"#D98719",
+            weight:1,
+        })
+
+        ano2011.bindTooltip('Ano 2011');
+        
+
+        var ano2012=L.geoJSON(trail29,{
+            color:"#B5A642",
+            weight:1,
+        })
+
+        ano2012.bindTooltip('Ano 2012');
+       
+
+        var ano2013=L.geoJSON(trail30,{
+            color:"#B87333",
+            weight:1,
+        })
+
+        ano2013.bindTooltip('Ano 2013');
+        
+
+        var ano2014=L.geoJSON(trail31,{
+            color:"#FF7F00",
+            weight:1,
+        })
+
+        ano2014.bindTooltip('Ano 2014');
+        
+
+        var ano2015=L.geoJSON(trail32,{
+            color:"#E47833",
+            weight:1,
+        })
+
+        ano2015.bindTooltip('Ano 2015');
+       
+
+        var ano2016=L.geoJSON(trail33,{
+            color:"#8E2323",
+            weight:1,
+        })
+
+        ano2016.bindTooltip('Ano 2016');
+     
+        var ano2017=L.geoJSON(trail34,{
+            color:"#EAEAAE",
+            weight:1,
+        })
+
+        ano2017.bindTooltip('Ano 2017');
+       
+
+        var ano2018=L.geoJSON(trail35,{
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        ano2018.bindTooltip('Ano2018');
+
+        var dia1=L.geoJSON(trail53,{
+            color: "#DBDB70",
+            weight:1,
+        })
+
+        dia1.bindTooltip ('dia1');
+
+        var dia2=L.geoJSON(trail54, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia2.bindTooltip('dia2');
+
+        var dia3=L.geoJSON(trail55, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia3.bindTooltip('dia3');
+
+        var dia4=L.geoJSON(trail56, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia4.bindTooltip('dia4');
+
+        var dia5=L.geoJSON(trail57, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia5.bindTooltip('dia5');
+
+        var dia6=L.geoJSON(trail58, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia6.bindTooltip('dia6');
+
+        var dia7=L.geoJSON(trail59, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia7.bindTooltip('dia7');
+
+        var dia8=L.geoJSON(trail60, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia8.bindTooltip('dia8');
+
+        var dia9=L.geoJSON(trail61, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia9.bindTooltip('dia9');
+
+        var dia10=L.geoJSON(trail62, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia10.bindTooltip('dia10');
+
+        var dia11=L.geoJSON(trail63, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia11.bindTooltip('dia11');
+
+        var dia12=L.geoJSON(trail64, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia12.bindTooltip('dia12');
+
+        var dia13=L.geoJSON(trail65, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia13.bindTooltip('dia13');
+
+        var dia14=L.geoJSON(trail66, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia14.bindTooltip('dia14');
+
+        var dia15=L.geoJSON(trail67, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia15.bindTooltip('dia15');
+
+        var dia16=L.geoJSON(trail68, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia16.bindTooltip('dia16');
+
+        var dia17=L.geoJSON(trail69, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia17.bindTooltip('dia17');
+
+        var dia18=L.geoJSON(trail70, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia18.bindTooltip('dia18');
+
+        var dia19=L.geoJSON(trail71, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia19.bindTooltip('dia19');
+
+        var dia20=L.geoJSON(trail72, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia20.bindTooltip('dia20');
+
+        var dia21=L.geoJSON(trail73, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia21.bindTooltip('dia21');
+
+        var dia22=L.geoJSON(trail74, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia22.bindTooltip('dia22');
+
+        var dia23=L.geoJSON(trail75, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia23.bindTooltip('dia23');
+
+        var dia24=L.geoJSON(trail76, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia24.bindTooltip('dia24');
+
+        var dia25=L.geoJSON(trail77, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia25.bindTooltip('dia25');
+
+        var dia26=L.geoJSON(trail78, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia26.bindTooltip('dia26');
+
+        var dia27=L.geoJSON(trail79, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia27.bindTooltip('dia27');
+
+        var dia28=L.geoJSON(trail80, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia28.bindTooltip('dia28');
+
+        var dia29=L.geoJSON(trail81, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia29.bindTooltip('dia29');
+
+        var dia30=L.geoJSON(trail82, {
+            color:"#DBDB70",
+            weight:1,
+        })
+
+        dia30.bindTooltip('dia30');
+
+
+
+        var cinfaes=L.geoJSON(trail2,{
+            color:'#F5A9A9',
+            weight: 1,
+        })
+
+
+        cinfaes.bindPopup(
+            "Cinfães");
+        cinfaes.addTo(map);
+
+        
+        var espadanedo=L.geoJSON(trail40,{
+            color:'#F79F81',
+            weight:1,
+        })
+
+        
+        espadanedo.bindPopup(
+            "Espadanedo");
+        espadanedo.addTo(map);
+
+        var ferreiros=L.geoJSON(trail41,{
+            color:'#F5DA81',
+            weight:1,
+        })
+       
+        ferreiros.bindPopup(
+            "Ferreiros");
+        ferreiros.addTo(map);
+
+        var fornelos=L.geoJSON(trail42,{
+            color:'#9FF781',
+            weight:1,
+        })
+        
+        fornelos.bindPopup(
+            "Fornelos");
+        fornelos.addTo(map);
+
+        var moimenta=L.geoJSON(trail43,{
+            color:'#A9F5E1',
+            weight:1,
+        })
+      
+        moimenta.bindPopup(
+            "Moimenta");
+        moimenta.addTo(map);
+
+        var nespereira=L.geoJSON(trail44,{
+            color:'#A9BCF5',
+            weight:1,
+        })
+      
+        nespereira.bindPopup(
+            "Nespereira");
+        nespereira.addTo(map);
+
+        var oliveira=L.geoJSON(trail45,{
+            color:'#E2A9F3',
+            weight:1,
+        })
+       
+        oliveira.bindPopup(
+            "Oliveira");
+        oliveira.addTo(map);
+
+        var piaes=L.geoJSON(trail46,{
+            color:'#00FFBF',
+            weight:1,
+        })
+      
+        piaes.bindPopup(
+            "Piães");
+        piaes.addTo(map);
+
+        var saocristovao=L.geoJSON(trail47,{
+            color:'#FA8258',
+            weight:1,
+        })
+      
+        saocristovao.bindPopup(
+            "São Cristóvão de Nogueira");
+        saocristovao.addTo(map);
+
+        var souselo=L.geoJSON(trail48,{
+            color:'#BDBDBD',
+            weight:1,
+        })
+        
+        souselo.bindPopup(
+            "Souselo");
+        souselo.addTo(map);
+
+        var tarouquela=L.geoJSON(trail49,{
+            color:'#FA58F4',
+            weight:1,
+        })
+     
+        tarouquela.bindPopup(
+            "Tarouquela");
+        tarouquela.addTo(map);
+
+        var tendais=L.geoJSON(trail50,{
+            color:'#58FA58',
+            weight:1,
+        })
+     
+        tendais.bindPopup(
+            "Tendais");
+        tendais.addTo(map);
+
+        var travanca=L.geoJSON(trail51,{
+            color:'#848484',
+            weight:1,
+        })
+      
+        travanca.bindPopup(
+            "Travanca");
+        travanca.addTo(map);
+
+        var uniaofreguesias=L.geoJSON(trail52,{
+            color:'#0B615E',
+            weight:1,
+        })
+        
+        uniaofreguesias.bindPopup(
+            "União de Freguesias de Alhões, Bustelo, Gralheira e Ramires");
+        uniaofreguesias.addTo(map);
+
+
+
+  
+
+        //* definir legenda para aparecer 
+    
+        var baselayers={
+            'Mapa Base': basemap,
+            'Streets': baseEsriStreets,
+            'Imagery': baseEsriImagery,
+    
+        };
+        var overlays1 ={
+            'Probabilidade Baixa':baixo,
+            'Probabilidade Baixa-Moderada': baixomoderado,
+            'Probabilidade Moderada': moderado,
+            'Probabilidade Elevada':elevado,
+            'Probabilidade Muito Elevada':muitoelevado,
+        };
+
+        var overlays ={ 
+            'Áreas Ardidas de Cinfães': thetrail,
+            'Ano 1990':ano1990,
+            'Ano 1991':ano1991,
+            'Ano 1993':ano1993,
+            'Ano 1994':ano1994,
+            'Ano 1995':ano1995,
+            'Ano 1996':ano1996,
+            'Ano 1997':ano1997,
+            'Ano 1998':ano1998,
+            'Ano 1999':ano1999,
+            'Ano 2000':ano2000,
+            'Ano 2001':ano2001,
+            'Ano 2002':ano2002,
+            'Ano 2003':ano2003,
+            'Ano 2004':ano2004,
+            'Ano 2005':ano2005,
+            'Ano 2006':ano2006,
+            'Ano 2007':ano2007,
+            'Ano 2008':ano2008,
+            'Ano 2009':ano2009,
+            'Ano 2010':ano2010,
+            'Ano 2011':ano2011,
+            'Ano 2012':ano2012,
+            'Ano 2013':ano2013,
+            'Ano 2014':ano2014,
+            'Ano 2015':ano2015,
+            'Ano 2016':ano2016,
+            'Ano 2017':ano2017,
+            'Ano 2018':ano2018,
+        };
+
+        var overlays2 ={
+            'dia1':dia1,
+            'dia2':dia2,
+            'dia3':dia3,
+            'dia4':dia4,
+            'dia5':dia5,
+            'dia6':dia6,
+            'dia7':dia7,
+            'dia8':dia8,
+            'dia9':dia9,
+            'dia10':dia10,
+            'dia11':dia11,
+            'dia12':dia12,
+            'dia13':dia13,
+            'dia14':dia14,
+            'dia15':dia15,
+            'dia16':dia16,
+            'dia17':dia17,
+            'dia18':dia18,
+            'dia19':dia19,
+            'dia20':dia20,
+            'dia21':dia21,
+            'dia22':dia22,
+            'dia23':dia23,
+            'dia24':dia24,
+            'dia25':dia25,
+            'dia26':dia26,
+            'dia27':dia27,
+            'dia28':dia28,
+            'dia29':dia29,
+            'dia30':dia30,
+        };
+
+       
+
+        L.control.layers(baselayers).addTo(map);
+        L.control.layers( '', overlays).addTo(map);
+        L.control.layers( '', overlays1).addTo(map);
+        L.control.layers( '', overlays2).addTo(map);
+
+
+    </script>
+    
+</body>
+</html>
+

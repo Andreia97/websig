@@ -1,0 +1,762 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color:#909396;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+/*menu*/
+nav.menu ul {  
+    list-style-type: none; 
+    margin:0px;
+    padding:0px;
+}
+
+nav.menu ul li{
+   float: left;
+   position: relative;
+}
+
+nav.menu li{
+   display: inline;
+}
+
+nav.menu li a{
+   text-decoration:none;
+   padding-left:4px;
+   padding-right:4px;
+   color:white;
+   background: #909396;
+}
+
+nav.menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding:5px 20px;
+    display:block;
+}
+
+nav.menu li a:hover{
+    background-color:white;
+    color:#909396;
+} 
+
+nav.menu ul ul{
+    display:none;
+    position: absolute;
+}
+
+nav.menu ul li:hover > ul{
+    display: block;
+}
+
+
+/*imagens*/
+@media only screen and (min-width:1000px) {
+    .img-info{
+        width: 85%;
+        float: left;
+        position: absolute;
+        left: 25%;
+    }
+    
+    .img-info p {
+        text-align: left;
+        line-height: 25px;
+        margin: 15%;
+    }
+
+    .img_sobremim {
+        border: 1 px solid black;
+        width: 25%;
+        height: 450px;
+        top: 25%;
+        left: 3%;
+        position: absolute;
+    }
+
+    .img_paginainicial1 {
+        padding-top: 0%;
+        width: 30%;
+        float: right;
+        margin: 5%;
+        padding-right: 40px;
+
+    }
+
+    .img_curriculo {
+        border: 1px solid black;
+        width: 90%;
+        position: absolute;
+        left: 360%;
+        top: -150%;
+    }
+
+    .Img_PROBLEMATICAS1 {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 250%;
+        right: 50%;
+    }
+
+    .Img_PROBLEMATICAS2 {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 250%;
+        left: 50%;
+    }
+
+    .Img_ESTUDOSAMBIENTAIS {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 320%;
+        right: 50%;
+    }
+
+    .Img_TAT {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 320%;
+        left: 50%;
+    }
+
+    .Img_SIEM {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 390%;
+        right: 50%;
+    }
+
+    .Img_DESENCARCERAMENTO {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 390%;
+        left: 50%;
+    }
+
+    .Img_licenciatura {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 460%;
+        right: 50%;
+    }
+
+    .img_esri {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 460%;
+        left: 50%;
+    }
+
+    .img_firex {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 530%;
+        right: 50%;
+    }
+
+    .img_here {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 530%;
+        left: 50%;
+    }
+
+    .img_secundario {
+        padding: 20px 0px 0px 30px;
+        width: 40%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 600%;
+        right: 50%;
+    }
+
+    .img_viseu {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 25%;
+        right: 50%;
+    }
+
+    .img_declives {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+    }
+
+    .img_denspop {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 100%;
+        right: 50%;
+    }
+
+    .img_hipsometria {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+    }
+
+    .img_cinfaes {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 175%;
+        right: 50%;
+    }
+
+    .img_declivescinf {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 175%;
+        left: 50%;
+    }
+
+    .img_hipscinf {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 250%;
+        right: 50%;
+    }
+
+    .img_cos {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 250%;
+        left: 50%;
+    }
+
+    .img_expcinf {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 325%;
+        right: 50%;
+    }
+
+    .img_probcinf {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 325%;
+        left: 50%;
+    }
+
+    .img_pergcinf {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 400%;
+        right: 50%;
+    }
+
+    .img_suscetibilidade {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 450px;
+        position: absolute;
+        top: 400%;
+        left: 50%;
+    }
+
+    .img_poster1 {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 750px;
+        position: absolute;
+        top: 475%;
+        right:50%;
+    }
+
+    .img_poster2 {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 750px;
+        position: absolute;
+        top: 475%;
+        left:50%;
+    }
+
+    .img_poster3 {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 750px;
+        position: absolute;
+        top: 595%;
+        right:50%;
+    }
+
+    .img_poster4 {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 750px;
+        position: absolute;
+        top: 595%;
+        left:50%;
+    }
+
+    .img_gondomar {
+        padding: 20px 0px 0px 30px;
+        width: 55%;
+        margin: auto 0;
+        height: 500px;
+        position: absolute;
+        top: 715%;
+        right:25%;
+    }
+
+    .img_centralidades {
+        padding: 20px 0px 0px 30px;
+        width: 55%;
+        margin: auto 0;
+        height: 500px;
+        position: absolute;
+        top: 800%;
+        right:25%;
+    }
+
+    .img_denspop1 {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 750px;
+        position: absolute;
+        top: 885%;
+        right: 50%;
+    }
+
+    .img_denspop2 {
+        padding: 20px 0px 0px 30px;
+        width: 47%;
+        margin: auto 0;
+        height: 750px;
+        position: absolute;
+        top: 885%;
+        left: 50%;
+    }
+
+
+
+/*redes sociais*/
+
+section{
+    margin:20px auto;
+    width:1025px;
+    height:150px;
+}
+
+.rede{
+    width:70px;
+    height:60px;
+    float:right;
+    margin-left:10px;
+    transition:all 0.4s ease-out;
+    border-radius:50%;
+    padding:10px;
+    margin-top:300px;
+    position: absolute;
+}
+
+#Facebook{
+    position: absolute;
+    padding:40px;
+}
+
+#Email{
+    position:absolute;
+    padding:40px;
+    left:20%;
+}
+
+.rede:hover {
+    cursor: pointer ;
+    transform: translateY(-20px);
+
+}
+
+
+.icone{
+    margin:0px auto;
+    padding:15px;
+    width:25px;
+    
+}
+
+
+#cv {
+    position: absolute;
+    top: 655%;
+    right: 5%;
+    text-decoration: none;
+}
+
+
+/*sobre mim*/
+#p{
+    text-indent: 20px;
+    line-height: 200%;
+    top:30%;
+    left:30%;
+    position: absolute;
+}
+
+#storymap{
+    top:100%;
+    position: absolute;
+    height:500px;
+    width:1350px;
+    left:0%;
+    right:5%;
+}
+
+/*Curriculo*/
+
+table {
+    border: 1;
+    align: center;
+    width: 70%;
+    padding: 40px;
+}
+
+#informacaopessoal {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+
+#curriculo {
+    background-color: black;
+    color: #909396;
+    top: 10%;
+    position: absolute;
+    left: 5%;
+}
+
+#i1 {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+}
+
+#i2 {
+    position: absolute;
+    top: 29%;
+    left: 5%;
+}
+
+#i3 {
+    position: absolute;
+    top: 33%;
+    left: 5%;
+}
+
+#i4 {
+    position: absolute;
+    top: 37%;
+    left: 5%;
+}
+
+#i5 {
+    position: absolute;
+    top: 41%;
+    left: 5%;
+}
+
+#i6 {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+
+#i7 {
+    position: absolute;
+    top: 49%;
+    left: 5%;
+}
+
+#i8 {
+    position: absolute;
+    top: 53%;
+    left: 5%;
+}
+
+#percursoatual {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 58%;
+    left: 5%;
+}
+
+#tabela1 {
+    position: absolute;
+    top: 58%;
+    left: 5%;
+}
+
+#aptidoesecompetenciasorganizacao {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 93%;
+    left: 5%;
+}
+
+#textoa {
+    position: absolute;
+    top: 98%;
+    left: 5%;
+}
+
+#textob {
+    position: absolute;
+    top: 102%;
+    left: 5%;
+}
+
+#textoc {
+    position: absolute;
+    top: 106%;
+    left: 5%;
+}
+
+#competenciasprofissionais {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 110%;
+    left: 5%;
+}
+
+#textod {
+    position: absolute;
+    top: 115%;
+    left: 5%;
+}
+
+#textoe {
+    position: absolute;
+    top: 119%;
+    left: 5%;
+}
+
+#textof {
+    position: absolute;
+    top: 123%;
+    left: 5%;
+}
+
+#aptidoesecompetenciastecnicas {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 127%;
+    left: 5%;
+}
+
+#textoj {
+    position: absolute;
+    top: 133%;
+    left: 5%;
+}
+
+#textog {
+    position: absolute;
+    top: 137%;
+    left: 5%;
+}
+
+#textoh {
+    position: absolute;
+    top: 141%;
+    left: 5%;
+}
+
+#textoi {
+    position: absolute;
+    top: 145%;
+    left: 5%;
+}
+
+#texton {
+    position: absolute;
+    top: 149%;
+    left: 5%;
+}
+
+#formacaoeeducacao {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 157%;
+    left: 5%;
+}
+
+#tabela2 {
+    position: absolute;
+    top: 156%;
+    left: 5%;
+}
+
+#cartaconducao {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 220%;
+    left: 5%;
+}
+
+#textom{
+    position: absolute;
+    top:225%;
+    left:5%;
+}
+
+#certificados {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+/*trabalhos realizados*/
+#cartografia {
+    background-color: black;
+    color: #909396;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+#storymap1 {
+    top:1020%;
+    position: absolute;
+    height: 500px;
+    width: 1350px;
+    left: 0%;
+    right: 5%;
+}
+
+
+/*Trabalhos*/
+#texto1{
+    text-indent: 20px;
+    line-height: 200%;
+    top:30%;
+    position: absolute;
+}
+
+#texto2{
+    text-indent: 20px;
+    line-height: 200%;
+    top:35%;
+    position: absolute;
+}
+
+#texto3{
+    text-indent: 20px;
+    line-height: 200%;
+    top:40%;
+    position: absolute;
+}
+
+#texto4{
+    text-indent: 20px;
+    line-height: 200%;
+    top:49%;
+    position: absolute;
+}
+
+#texto5{
+    text-indent: 20px;
+    line-height: 200%;
+    top:55%;
+    position: absolute;
+}
+
+#texto6{
+    text-indent: 20px;
+    line-height: 200%;
+    top:66%;
+    position: absolute;
+}
+
+
