@@ -155,7 +155,7 @@
         });
         
 
-        //* adicionar estilo ao geojason
+         //* adicionar estilo ao geojason
         var thetrail=L.geoJSON(trail, {
             color:'#800000',
             weight: 2,
@@ -700,171 +700,163 @@
             weight:1,
         });
        
-        oliveira.bindPopup(
-            "Oliveira");
-        oliveira.addTo(map);
+                oliveira.bindPopup("Oliveira");
+                oliveira.addTo(map);
 
-        var piaes=L.geoJSON(trail46,{
-            color:'#00FFBF',
-            weight:1,
-        });
+                var piaes=L.geoJSON(trail46,{
+                        color:'#00FFBF',
+                        weight:1,
+                });
       
-        piaes.bindPopup(
-            "Piães");
-        piaes.addTo(map);
+                piaes.bindPopup("Piães");
+                piaes.addTo(map);
 
-        var saocristovao=L.geoJSON(trail47,{
-            color:'#FA8258',
-            weight:1,
-        });
+                var saocristovao=L.geoJSON(trail47,{
+                        color:'#FA8258',
+                        weight:1,
+                });
       
-        saocristovao.bindPopup(
-            "São Cristóvão de Nogueira");
-        saocristovao.addTo(map);
+                saocristovao.bindPopup("São Cristóvão de Nogueira");
+                saocristovao.addTo(map);
 
-        var souselo=L.geoJSON(trail48,{
-            color:'#BDBDBD',
-            weight:1,
-        });
+                var souselo=L.geoJSON(trail48,{
+                        color:'#BDBDBD',
+                        weight:1,
+                });
         
-        souselo.bindPopup(
-            "Souselo");
-        souselo.addTo(map);
+                souselo.bindPopup("Souselo");
+                souselo.addTo(map);
 
-        var tarouquela=L.geoJSON(trail49,{
-            color:'#FA58F4',
-            weight:1,
-        });
+                var tarouquela=L.geoJSON(trail49,{
+                        color:'#FA58F4',
+                        weight:1,
+                });
      
-        tarouquela.bindPopup(
-            "Tarouquela");
-        tarouquela.addTo(map);
+                tarouquela.bindPopup("Tarouquela");
+                tarouquela.addTo(map);
 
-        var tendais=L.geoJSON(trail50,{
-            color:'#58FA58',
-            weight:1,
-        });
+                var tendais=L.geoJSON(trail50,{
+                        color:'#58FA58',
+                        weight:1,
+                });
      
-        tendais.bindPopup(
-            "Tendais");
-        tendais.addTo(map);
+                tendais.bindPopup("Tendais");
+                tendais.addTo(map);
 
-        var travanca=L.geoJSON(trail51,{
-            color:'#848484',
-            weight:1,
-        });
+                var travanca=L.geoJSON(trail51,{
+                        color:'#848484',
+                        weight:1,
+                });
       
-        travanca.bindPopup(
-            "Travanca");
-        travanca.addTo(map);
+                travanca.bindPopup("Travanca");
+                travanca.addTo(map);
 
-        var uniaofreguesias=L.geoJSON(trail52,{
-            color:'#0B615E',
-            weight:1,
-        });
+                var uniaofreguesias=L.geoJSON(trail52,{
+                        color:'#0B615E',
+                        weight:1,
+                });
         
-        uniaofreguesias.bindPopup(
-            "União de Freguesias de Alhões, Bustelo, Gralheira e Ramires");
-        uniaofreguesias.addTo(map);
+                uniaofreguesias.bindPopup("União de Freguesias de Alhões, Bustelo, Gralheira e Ramires");
+                uniaofreguesias.addTo(map);
 
 
 
   
 
-        //* definir legenda para aparecer 
+        // definir legenda para aparecer 
     
-        var baselayers={
-            'Mapa Base': basemap,
-            'Streets': baseEsriStreets,
-            'Imagery': baseEsriImagery,
-    
-        };
-        var overlays1 ={
-            'Probabilidade Baixa':baixo,
-            'Probabilidade Baixa-Moderada': baixomoderado,
-            'Probabilidade Moderada': moderado,
-            'Probabilidade Elevada':elevado,
-            'Probabilidade Muito Elevada':muitoelevado,
-        };
+             	var baselayers = {
+        		'Mapa Base': B_OSM,
+        		'Streets': Esri_WorldStreetMap,
+        		'Imagery': Esri_WorldImagery
+    		};
 
-        var overlays ={ 
-            'Áreas Ardidas de Cinfães': thetrail,
-            'Ano 1990':ano1990,
-            'Ano 1991':ano1991,
-            'Ano 1993':ano1993,
-            'Ano 1994':ano1994,
-            'Ano 1995':ano1995,
-            'Ano 1996':ano1996,
-            'Ano 1997':ano1997,
-            'Ano 1998':ano1998,
-            'Ano 1999':ano1999,
-            'Ano 2000':ano2000,
-            'Ano 2001':ano2001,
-            'Ano 2002':ano2002,
-            'Ano 2003':ano2003,
-            'Ano 2004':ano2004,
-            'Ano 2005':ano2005,
-            'Ano 2006':ano2006,
-            'Ano 2007':ano2007,
-            'Ano 2008':ano2008,
-            'Ano 2009':ano2009,
-            'Ano 2010':ano2010,
-            'Ano 2011':ano2011,
-            'Ano 2012':ano2012,
-            'Ano 2013':ano2013,
-            'Ano 2014':ano2014,
-            'Ano 2015':ano2015,
-            'Ano 2016':ano2016,
-            'Ano 2017':ano2017,
-            'Ano 2018':ano2018,
-        };
+                var overlays1 ={
+                        'Probabilidade Baixa': baixo,
+                        'Probabilidade Baixa-Moderada': baixomoderado,
+                        'Probabilidade Moderada': moderado,
+                        'Probabilidade Elevada': elevado,
+                        'Probabilidade Muito Elevada': muitoelevado
+                };
 
-        var overlays2 ={
-            'dia1':dia1,
-            'dia2':dia2,
-            'dia3':dia3,
-            'dia4':dia4,
-            'dia5':dia5,
-            'dia6':dia6,
-            'dia7':dia7,
-            'dia8':dia8,
-            'dia9':dia9,
-            'dia10':dia10,
-            'dia11':dia11,
-            'dia12':dia12,
-            'dia13':dia13,
-            'dia14':dia14,
-            'dia15':dia15,
-            'dia16':dia16,
-            'dia17':dia17,
-            'dia18':dia18,
-            'dia19':dia19,
-            'dia20':dia20,
-            'dia21':dia21,
-            'dia22':dia22,
-            'dia23':dia23,
-            'dia24':dia24,
-            'dia25':dia25,
-            'dia26':dia26,
-            'dia27':dia27,
-            'dia28':dia28,
-            'dia29':dia29,
-            'dia30':dia30,
-        };
+                var overlays ={ 
+                        'Áreas Ardidas de Cinfães': thetrail,
+                        'Ano 1990': ano1990,
+                        'Ano 1991': ano1991,
+                        'Ano 1993': ano1993,
+                        'Ano 1994': ano1994,
+                        'Ano 1995': ano1995,
+                        'Ano 1996': ano1996,
+                        'Ano 1997': ano1997,
+                        'Ano 1998': ano1998,
+                        'Ano 1999': ano1999,
+                        'Ano 2000': ano2000,
+                        'Ano 2001': ano2001,
+                        'Ano 2002': ano2002,
+                        'Ano 2003': ano2003,
+                        'Ano 2004': ano2004,
+                        'Ano 2005': ano2005,
+                        'Ano 2006': ano2006,
+                        'Ano 2007': ano2007,
+                        'Ano 2008': ano2008,
+                        'Ano 2009': ano2009,
+                        'Ano 2010': ano2010,
+                        'Ano 2011': ano2011,
+                        'Ano 2012': ano2012,
+                        'Ano 2013': ano2013,
+                        'Ano 2014': ano2014,
+                        'Ano 2015': ano2015,
+                        'Ano 2016': ano2016,
+                        'Ano 2017': ano2017,
+                        'Ano 2018': ano2018
+                };
+
+                var overlays2 ={
+                        'dia1': dia1,
+                        'dia2': dia2,
+                        'dia3': dia3,
+                        'dia4': dia4,
+                        'dia5': dia5,
+                        'dia6': dia6,
+                        'dia7': dia7,
+                        'dia8': dia8,
+                        'dia9': dia9,
+                        'dia10': dia10,
+                        'dia11': dia11,
+                        'dia12': dia12,
+                        'dia13': dia13,
+                        'dia14': dia14,
+                        'dia15': dia15,
+                        'dia16': dia16,
+                        'dia17': dia17,
+                        'dia18': dia18,
+                        'dia19': dia19,
+                        'dia20': dia20,
+                        'dia21': dia21,
+                        'dia22': dia22,
+                        'dia23': dia23,
+                        'dia24': dia24,
+                        'dia25': dia25,
+                        'dia26': dia26,
+                        'dia27': dia27,
+                        'dia28': dia28,
+                        'dia29': dia29,
+                        'dia30': dia30
+                };
 
        
 
-        L.control.layers(baselayers).addTo(map);
-        L.control.layers( '', overlays).addTo(map);
-        L.control.layers( '', overlays1).addTo(map);
-        L.control.layers( '', overlays2).addTo(map);
+                L.control.layers(baselayers).addTo(map);
+                L.control.layers( '', overlays).addTo(map);
+                L.control.layers( '', overlays1).addTo(map);
+                L.control.layers( '', overlays2).addTo(map);
 
-         /* add scalebar */
-
-        var scale = L.control.scale();
-        scale.addTo(map);
                 
-    </script>
+        //add scalebar
+                var scale = L.control.scale();
+                scale.addTo(map);
+                
+        </script>
     
 </body>
 </html>
