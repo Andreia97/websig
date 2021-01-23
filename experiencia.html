@@ -89,33 +89,30 @@
 
 
         <style>
-
             #mapDIV{
                 height: 600px;
                 width: 1200px;
                 border: solid 1px black;
                 position: absolute;
                 top:15%;
-                left:2%
-            };
-
+                left:2%;
+            }
+            
             .leaflet-control-layers-toggle:after{ 
                 content:"Camadas"; 
                 font-family: sans-serif;
                 color:white;
-                width: 200px;
-                
+                width: 200px; 
             }
+
             .leaflet-control-layers-toggle{ 
                 width: auto;
                 background-position:3px 50% ;
                 padding-left:36px;
                 text-decoration:none;
                 background-color:#4c4d4c;
-             
             }
-
-</style>
+        </style>
 
 </head>
 <body>
@@ -143,17 +140,20 @@
         zoom:12
         });
 
-        //*tipo de mapa
-        var basemap=L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{    
+        //tipo de mapa
+        var B_OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	        maxZoom: 19,
+	        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         });
-        basemap.addTo(map);
 
-        var baseEsriImagery=L.esri.basemapLayer('Imagery');
-        baseEsriImagery.addTo(map);
-
-        var baseEsriStreets=L.esri.basemapLayer('Streets'); 
-
-       
+        var Esri_WorldStreetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+	        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+        });
+        
 
         //* adicionar estilo ao geojason
         var thetrail=L.geoJSON(trail, {
